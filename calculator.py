@@ -1,19 +1,19 @@
 # calculator.py
 
-from operation import add, subtract, multiply, divide, power, sqrt, log, sin, cos, tan
+from dispatcher import get_operation
 
 def calculate(a, b=None, operator=None):
-    if operator == '+': return add(a, b)
-    elif operator == '-': return subtract(a, b)
-    elif operator == '*': return multiply(a, b)
-    elif operator == '/': return divide(a, b)
-    elif operator == '^': return power(a, b)
-    elif operator == 'sqrt': return sqrt(a)
-    elif operator == 'log': return log(a, b if b else None)
-    elif operator == 'sin': return sin(a)
-    elif operator == 'cos': return cos(a)
-    elif operator == 'tan': return tan(a)
-    else: raise ValueError(f"Unsupported operator: {operator}")
+    operation = get_operation(operator)
+    if not operation:
+        raise ValueError(f"Unsupported operator: {operator}")
+
+    # Use polymorphism to execute the operation
+    if operator in ['sqrt', 'sin', 'cos', 'tan']:
+        return operation.execute(a)
+    elif operator == 'log':
+        return operation.execute(a, b if b else None)
+    else:
+        return operation.execute(a, b)
 
 if __name__ == "__main__":
     print("🔬 Scientific Calculator")
@@ -36,4 +36,3 @@ if __name__ == "__main__":
 
     except Exception as e:
         print(f"❌ Error: {e}")
-
