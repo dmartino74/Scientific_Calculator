@@ -1,3 +1,5 @@
+# requirements.txt
+
 astroid==3.3.5
 coverage==7.6.4
 dill==0.3.9
@@ -22,3 +24,4 @@ tomli==2.0.2
 tomlkit==0.13.2
 typing_extensions==4.12.2
 tzdata==2024.2
+openpyxl==3.1.2  # ✅ Required for Excel export via pandas
