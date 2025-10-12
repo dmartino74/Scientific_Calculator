@@ -2,3 +2,7 @@
 2025-10-11 22:20:10,841 - INFO - Requested operation: - with a=1.0, b=5.0
 2025-10-11 22:20:10,841 - INFO - Result: -4.0
 2025-10-11 22:21:19,569 - INFO - User exited the calculator.
+2025-10-11 23:53:43,602 - INFO - User input: a=2.0, operator=tan
+2025-10-11 23:53:43,605 - INFO - Requested operation: tan with a=2.0, b=None
+2025-10-11 23:53:43,605 - INFO - Result: 0.03492076949174773
+2025-10-11 23:53:47,857 - INFO - User exited the calculator.
