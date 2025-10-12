@@ -1,0 +1,4 @@
+2025-10-11 22:20:08,929 - INFO - User input: a=1.0, operator=-
+2025-10-11 22:20:10,841 - INFO - Requested operation: - with a=1.0, b=5.0
+2025-10-11 22:20:10,841 - INFO - Result: -4.0
+2025-10-11 22:21:19,569 - INFO - User exited the calculator.
