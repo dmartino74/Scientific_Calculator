@@ -1,79 +1,129 @@
-# Scientific Calculator Project
-Here’s a clean, professional `README.md` tailored for your **Scientific Calculator** project — modular, testable, and midterm-ready:
+
+
+# 🧮 Enhanced Scientific Calculator CLI (Midterm Project)
+
+This project is a modular, object-oriented command-line calculator built in Python. It supports both basic arithmetic and advanced scientific operations, with integrated logging, configuration via environment variables, and data management using pandas. Designed as part of a midterm assessment, it demonstrates key software engineering principles including design patterns, testing, and version control.
 
 ---
 
-## 🧮 Scientific Calculator
+## 🚀 Features
 
-A modular Python-based scientific calculator designed for clarity, reproducibility, and full test coverage. Built by **dmartino74** for midterm evaluation and instructional use.
-
----
-
-### 📁 Project Structure
-
-```
-Scientific_Calculator/
-├── calculator.py          # Main interface and dispatcher
-├── operation.py           # Core arithmetic and scientific functions
-├── test_operation.py      # Pytest suite for all operations
-├── README.md              # Project documentation
-```
+- **Arithmetic Operations**: `+`, `-`, `*`, `/`, `^` (power)
+- **Scientific Functions**: `sqrt`, `log`, `sin`, `cos`, `tan`
+- **Error Handling**: Division by zero, invalid inputs, negative roots
+- **Logging**: Configurable log levels, input/output/error tracking
+- **Environment Configuration**: `.env` file for toggles and paths
+- **Data Management**: Session history stored in pandas DataFrame
+- **Export Options**: Save results to CSV or Excel
+- **Unit Testing**: Comprehensive test suite with `pytest`
+- **Version Control**: Git workflow with feature branches and commits
 
 ---
 
-### ⚙️ Features
+## 🛠️ Setup Instructions
 
-- Basic operations: `+`, `-`, `*`, `/`, `^`
-- Scientific functions: `sqrt`, `log`, `sin`, `cos`, `tan`
-- Input validation and error handling
-- CLI interface for interactive use
-- Modular design for easy grading and extension
-- Pytest-based test suite with edge case coverage
-
----
-
-### 🚀 How to Run
+### 1. Clone the Repository
 
 ```bash
-python3 calculator.py
+git clone https://github.com/dmartino74/Midterm_Project.git
+cd Midterm_Project
 ```
 
-Follow the prompts to enter numbers and choose operations interactively.
+### 2. Create and Activate Virtual Environment
 
----
-
-### 🧪 How to Test
-
-Make sure `pytest` is installed:
 ```bash
-pip install pytest
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-Then run:
+### 3. Install Dependencies
+
 ```bash
-pytest test_operation.py
+pip install -r requirements.txt
 ```
 
-All tests should pass, including:
-- Division by zero
-- Square root of negative numbers
-- Logarithm of non-positive values
+### 4. Configure Environment Variables
+
+Create a `.env` file in the project root:
+
+```env
+LOG_LEVEL=INFO
+CSV_OUTPUT_PATH=session_results.csv
+EXCEL_OUTPUT_PATH=session_results.xlsx
+ENABLE_SCIENTIFIC_MODE=true
+```
 
 ---
 
-### 🧠 Educational Value
+## 🧪 Running the Calculator
 
-This project emphasizes:
-- Clean separation of logic
-- Robust exception handling
-- Reproducible workflows
-- Transparent testing for grading and review
+```bash
+python calculator.py
+```
+
+Follow the prompts to enter numbers and choose operations. Results are logged and stored in session history.
 
 ---
 
-### 📌 Author
+## 📁 Exporting Results
 
-**Daniel Martino**  
-GitHub: [dmartino74](https://github.com/dmartino74)  
-Focus: Modular Python systems, reproducible workflows, clarity in grading
+At the end of a session, results are automatically saved to:
+
+- CSV: `session_results.csv`
+- Excel: `session_results.xlsx` (if enabled)
+
+---
+
+## 🧪 Running Tests
+
+```bash
+pytest --cov
+```
+
+Includes tests for:
+- Arithmetic and scientific operations
+- Error handling
+- CSV export
+- Edge cases (e.g., divide by zero, invalid log input)
+
+---
+
+## 🧼 Project Structure
+
+```
+Midterm_Project/
+├── calculator.py
+├── operations/
+│   ├── base.py
+│   ├── arithmetic.py
+│   ├── scientific.py
+│   └── dispatcher.py
+├── test_operation.py
+├── requirements.txt
+├── .env
+└── README.md
+```
+
+---
+
+## 🧠 Design Patterns Used
+
+- **Strategy**: Dynamic selection of operation logic
+- **Factory**: Centralized creation of operation objects
+- **Memento** (optional): For undo/redo history snapshots
+
+---
+
+## 📌 Version Control Workflow
+
+```bash
+git checkout -b feature/logging
+# make changes
+git commit -m "Add logging configuration via .env"
+git push origin feature/logging
+```
+
+---
+
+## 📚 Credits
 
