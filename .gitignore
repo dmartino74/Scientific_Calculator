@@ -1,1 +1,23 @@
+# 🐍 Python cache and compiled files
+__pycache__/
+*.pyc
+
+# 🧪 Test and coverage artifacts
+.coverage
+coverage.xml
+
+# 📦 Virtual environment
 venv/
+.venv/
+
+# 📄 CSV exports and logs
+*.csv
+*.log
+
+# 🔐 Environment variables
+.env
+
+# 🗂 IDE/editor settings (optional but common)
+.vscode/
+.idea/
+*.swp
