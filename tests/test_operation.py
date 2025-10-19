@@ -1,5 +1,3 @@
-# tests/test_operation.py
-
 import sys
 import os
 import pytest
@@ -13,6 +11,8 @@ from operations.operation import (
     add, subtract, multiply, divide,
     power, sqrt, log, sin, cos, tan
 )
+from operations.scientific import Log, Tan
+from operations.base import Operation
 
 # 🧪 Arithmetic Tests
 def test_add():
@@ -52,6 +52,10 @@ def test_log_invalid():
     with pytest.raises(ValueError):
         log(0)
 
+def test_log_negative():
+    with pytest.raises(ValueError):
+        Log().execute(-1)
+
 def test_sin():
     assert round(sin(90), 5) == 1.0
 
@@ -60,6 +64,16 @@ def test_cos():
 
 def test_tan():
     assert round(tan(45), 5) == 1.0
+
+def test_tan_90():
+    result = Tan().execute(89.999)
+    assert abs(result) > 1000
+
+# 🧪 Base Class Behavior
+def test_base_operation_not_implemented():
+    op = Operation()
+    with pytest.raises(NotImplementedError):
+        op.execute(1, 2)
 
 # 🧪 CSV Export Test
 def test_csv_export(tmp_path):
